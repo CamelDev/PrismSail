@@ -7,6 +7,7 @@ using System.Windows;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Unity;
+using PrismSail.Views;
 
 namespace PrismSail.Core
 {
@@ -14,7 +15,7 @@ namespace PrismSail.Core
     {
         protected override DependencyObject CreateShell()
         {
-            return this.Container.Resolve<MainWindow>();
+            return this.Container.Resolve<AppShell>();
         }
 
         protected override void InitializeShell()
