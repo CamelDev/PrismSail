@@ -7,7 +7,9 @@ using System.Windows;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Unity;
+using PrismSail.SearchModule;
 using PrismSail.Views;
+using PrismSailCommon;
 
 namespace PrismSail.Core
 {
@@ -29,15 +31,13 @@ namespace PrismSail.Core
         {
             base.ConfigureModuleCatalog();
             ModuleCatalog moduleCatalog = (ModuleCatalog) this.ModuleCatalog;
-            // moduleCatalog.AddModule(x);
-            // moduleCatalog.AddModule(y);
-            // moduleCatalog.AddModule(z);
+            moduleCatalog.AddModule(typeof(SailSearchModule));
         }
 
         protected override void ConfigureContainer()
         {
-            // Container.RegisterInstance<>();
             base.ConfigureContainer();
+            Container.RegisterInstance<ITimeService>(new TimeService());
         }
     }
 }

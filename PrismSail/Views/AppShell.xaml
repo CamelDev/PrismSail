@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrismSail.Views"
-        xmlns:regions="http://prismlibrary.com/"
+        xmlns:prism="http://www.codeplex.com/prism"
         mc:Ignorable="d"
         Title="DEMO WPF + Prism" Height="450" Width="800">
 
@@ -21,6 +21,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel x:Name="Menu" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Background="#FF26264D">
+
+
             <Button Height="20" Width="175" Margin="5" Content="Load map" HorizontalAlignment="Left">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -34,10 +36,12 @@
                     </Style>
                 </Button.Style>
             </Button>
+
+       
         </StackPanel>
 
-        <ContentControl regions:RegionManager.RegionName="RegionA" Grid.Column="0" Grid.Row="2" Background="#FF4E4E66" />
-        <ContentControl regions:RegionManager.RegionName="RegionB" Grid.Column="2" Grid.Row="2" Background="#FF4E4E99" />
+        <ContentControl prism:RegionManager.RegionName="CitySearchRegion" Grid.Column="0" Grid.Row="2" Background="#FF4E4E66" />
+        <ContentControl prism:RegionManager.RegionName="MapRegion" Grid.Column="2" Grid.Row="2" Background="#FF4E4E99" />
 
         <GridSplitter
             ResizeDirection="Rows"
