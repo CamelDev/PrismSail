@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrismSail.CityDetailsModule.Views"
         mc:Ignorable="d" 
-        d:DesignHeight="300" d:DesignWidth="300">
+        d:DesignHeight="285" d:DesignWidth="300">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="280" Margin="10,10,0,0" VerticalAlignment="Top" Width="227">
+        <DataGrid HorizontalAlignment="Left" Height="265" Margin="10,10,10,10" VerticalAlignment="Bottom" Width="227">
             <DataGrid.Columns>
                 <DataGridTextColumn/>
                 <DataGridTextColumn/>

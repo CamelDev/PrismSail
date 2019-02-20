@@ -41,8 +41,8 @@
         </StackPanel>
 
         <StackPanel  Grid.Column="0" Grid.Row="2">
-            <ContentControl prism:RegionManager.RegionName="CitySearchRegion" Background="#FF4E4E66" Height="80"/>
-            <ScrollViewer prism:RegionManager.RegionName="CityDetailsRegion" Background="#FF4E4E66" Height="293" VerticalAlignment="Stretch" />
+            <ContentControl prism:RegionManager.RegionName="CitySearchRegion" Background="#FF4E4E66" Height="95"/>
+            <ScrollViewer prism:RegionManager.RegionName="CityDetailsRegion" Background="#FF4E4E66" Height="285" VerticalAlignment="Stretch" />
         </StackPanel>
        
         

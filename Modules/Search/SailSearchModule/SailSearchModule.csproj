@@ -92,6 +92,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SailSearchModule.cs" />
+    <Compile Include="ViewModels\CitySearchViewModel.cs" />
     <Compile Include="Views\CitySearchView.xaml.cs">
       <DependentUpon>CitySearchView.xaml</DependentUpon>
     </Compile>
