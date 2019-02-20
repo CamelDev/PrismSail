@@ -31,7 +31,9 @@ namespace PrismSail.Core
         {
             base.ConfigureModuleCatalog();
             ModuleCatalog moduleCatalog = (ModuleCatalog) this.ModuleCatalog;
+            
             moduleCatalog.AddModule(typeof(SailSearchModule));
+            moduleCatalog.AddModule(typeof(CityDetailsModule.CityDetailsModule));
         }
 
         protected override void ConfigureContainer()

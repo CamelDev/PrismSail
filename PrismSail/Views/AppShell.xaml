@@ -40,7 +40,8 @@
        
         </StackPanel>
 
-        <ContentControl prism:RegionManager.RegionName="CitySearchRegion" Grid.Column="0" Grid.Row="2" Background="#FF4E4E66" />
+        <ScrollViewer prism:RegionManager.RegionName="SidebarRegion" Grid.Column="0" Grid.Row="2" Background="#FF4E4E66" />
+        
         <ContentControl prism:RegionManager.RegionName="MapRegion" Grid.Column="2" Grid.Row="2" Background="#FF4E4E99" />
 
         <GridSplitter

@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="PrismSail.CityDetailsModule.Views.CityDetailsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrismSail.CityDetailsModule.Views"
+        mc:Ignorable="d" 
+        d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Height="280" Margin="10,10,0,0" VerticalAlignment="Top" Width="227">
+            <DataGrid.Columns>
+                <DataGridTextColumn/>
+                <DataGridTextColumn/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

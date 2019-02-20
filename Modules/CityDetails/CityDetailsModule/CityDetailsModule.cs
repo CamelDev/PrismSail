@@ -5,23 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using Prism.Modularity;
 using Prism.Regions;
-using PrismSail.SearchModule.Views;
+using PrismSail.CityDetailsModule.Views;
 using PrismSailCommon;
 
-namespace PrismSail.SearchModule
+namespace PrismSail.CityDetailsModule
 {
-    public class SailSearchModule:IModule
+    public class CityDetailsModule:IModule
     {
         private readonly IRegionManager _regionManager;
 
-        public SailSearchModule(IRegionManager regionManager)
+        public CityDetailsModule(IRegionManager regionManager)
         {
             _regionManager = regionManager;
         }
 
         public void Initialize()
         {
-            _regionManager.RegisterViewWithRegion(Regions.SidebarRegion, typeof(CitySearchView));
+            _regionManager.RegisterViewWithRegion(Regions.SidebarRegion, typeof(CityDetailsView));
         }
 
     }

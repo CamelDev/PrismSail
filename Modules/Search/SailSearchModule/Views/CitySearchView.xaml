@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PrismSail.SearchModule.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+             Height="60" Width="300">
+    <Grid Background="Black">
         <TextBox Name="CitySearch" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap"
                  Text="City..." VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True" />
         <Button Content="Search" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="120" />

@@ -8,8 +8,7 @@ namespace PrismSailCommon
 {
     public static class Regions
     {
-        public static string SearchRegion => "SearchRegion";
+        public static string SidebarRegion  => "SidebarRegion";
         public static string MapRegion => "MapRegion";
-        public static string CitySearchRegion  => "CitySearchRegion";
     }
 }
