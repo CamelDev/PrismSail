@@ -7,7 +7,7 @@ namespace PrismSail.SearchModule.Views
     {
         public CitySearchView()
         {
-  
+            InitializeComponent();
         }
     }
 }
