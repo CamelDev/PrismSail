@@ -2,6 +2,7 @@
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Unity;
+using PrismSail.MapModule.Views;
 using PrismSail.SearchModule;
 using PrismSail.Views;
 using PrismSailCommon;
@@ -29,6 +30,14 @@ namespace PrismSail.Core
             
             moduleCatalog.AddModule(typeof(SailSearchModule));
             moduleCatalog.AddModule(typeof(CityDetailsModule.CityDetailsModule));
+
+            var mapModuleType = typeof(MapModule.MapModule);
+            moduleCatalog.AddModule(new ModuleInfo()
+            {
+                ModuleName = mapModuleType.Name,
+                ModuleType = mapModuleType.AssemblyQualifiedName,
+                InitializationMode = InitializationMode.OnDemand
+            });
         }
 
         protected override void ConfigureContainer()
