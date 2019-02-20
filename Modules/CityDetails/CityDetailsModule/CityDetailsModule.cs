@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Prism.Modularity;
+﻿using Prism.Modularity;
 using Prism.Regions;
 using PrismSail.CityDetailsModule.Views;
 using PrismSailCommon;
@@ -21,7 +16,7 @@ namespace PrismSail.CityDetailsModule
 
         public void Initialize()
         {
-            _regionManager.RegisterViewWithRegion(Regions.SidebarRegion, typeof(CityDetailsView));
+            _regionManager.RegisterViewWithRegion(Regions.CityDetailsRegion, typeof(CityDetailsView));
         }
 
     }

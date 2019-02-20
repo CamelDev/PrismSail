@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Prism.Modularity;
+﻿using Prism.Modularity;
 using Prism.Regions;
 using PrismSail.SearchModule.Views;
 using PrismSailCommon;
@@ -21,8 +16,7 @@ namespace PrismSail.SearchModule
 
         public void Initialize()
         {
-            _regionManager.RegisterViewWithRegion(Regions.SidebarRegion, typeof(CitySearchView));
+            _regionManager.RegisterViewWithRegion(Regions.CitySearchRegion, typeof(CitySearchView));
         }
-
     }
 }
