@@ -44,6 +44,7 @@ namespace PrismSail.Core
         {
             base.ConfigureContainer();
             Container.RegisterInstance<ITimeService>(new TimeService());
+            Container.RegisterInstance<ICitySearchService>(new CitySearchService());
         }
     }
 }

@@ -7,12 +7,13 @@
         mc:Ignorable="d" 
         d:DesignHeight="285" d:DesignWidth="300">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="265" Margin="10,10,10,10" VerticalAlignment="Bottom" Width="227">
+        <DataGrid HorizontalAlignment="Left" Height="227" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="227">
             <DataGrid.Columns>
                 <DataGridTextColumn/>
                 <DataGridTextColumn/>
             </DataGrid.Columns>
         </DataGrid>
+        <Label x:Name="LblCityName" Content="No data" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold"/>
 
     </Grid>
 </UserControl>
