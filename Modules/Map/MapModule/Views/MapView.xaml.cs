@@ -19,8 +19,14 @@ namespace PrismSail.MapModule.Views
 
         private void OnPresentOnMap(CityData obj)
         {
-            var mapUrl = $"www.openstreetmap.org/?lat={obj.Latitude}&lon={obj.Longitude}&zoom=17&layers=M";
+            var mapUrl = $"www.openstreetmap.org/?lat={FormatCoord(obj.Latitude)}&lon={FormatCoord(obj.Longitude)}&zoom=17&layers=M";
             WbMapBrowser.Navigate("https://"+mapUrl);
+        }
+
+        private static string FormatCoord(decimal coord)
+        {
+            var enCulture = System.Globalization.CultureInfo.GetCultureInfo("en-EN");
+            return coord.ToString(enCulture);
         }
     }
 }

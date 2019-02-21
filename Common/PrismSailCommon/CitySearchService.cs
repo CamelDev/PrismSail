@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Net;
+using Newtonsoft.Json;
 using PrismSailCommon.Models;
+using System.Web;
 
 namespace PrismSailCommon
 {
@@ -9,15 +12,41 @@ namespace PrismSailCommon
     {
         public void SearchByName(string name)
         {
-            var city = new CityData()
+            using (var w = new WebClient())
             {
-                Name = "Bielsko",
-                Latitude = new decimal(51.6),
-                Longitude = new decimal(0.06),
-                Props = GetProps()
-            };
+                w.Encoding = System.Text.Encoding.UTF8;
+                var url =
+                    $"nominatim.openstreetmap.org/search?city={HttpUtility.UrlEncode(name)}&format=json&limit=10&email=kamil.dabrowski@gmail.com";
 
-            CityFound?.Invoke(city);
+                try
+                {
+                    var jsonData = w.DownloadString("http://" + url);
+
+                    if (!string.IsNullOrEmpty(jsonData))
+                    {
+                        var cityData = JsonConvert.DeserializeObject<List<OsmSearchResult>>(jsonData).FirstOrDefault();
+
+                        if (cityData != null)
+                        {
+                            var city = new CityData()
+                            {
+                                Name = cityData.display_name.Split(',')[0],
+                                Latitude = cityData.lat,
+                                Longitude = cityData.lon,
+                                Props = GetProps(cityData)
+                            };
+
+                            CityFound?.Invoke(city);
+                        }
+                    }
+
+                    CityNotFound?.Invoke($"No results for: '{name}'");
+                }
+                catch (Exception e)
+                {
+                    CityNotFound?.Invoke($"Search error: {e.Message}");
+                }
+            }
         }
 
         public void PresentCityOnMap(CityData city)
@@ -25,12 +54,13 @@ namespace PrismSailCommon
             PresentOnMap?.Invoke(city);
         }
 
-        private static List<CityProperty> GetProps()
+        private static List<CityProperty> GetProps(OsmSearchResult osmResult)
         {
             var props = new List<CityProperty>
             {
-                new CityProperty("Population", "1.2mln"), 
-                new CityProperty("Area", "12sqr miles"),
+                new CityProperty("OSM ID", osmResult.osm_id),
+                new CityProperty("Name", osmResult.display_name),
+                new CityProperty("Place ID", osmResult.place_id.ToString()),
             };
 
             for (int i = 0; i < 1000; i++)
