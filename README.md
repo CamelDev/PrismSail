@@ -1,1 +1,11 @@
-PrismSail
+PrismSail is Prism 6 na .Net 4.5 demo application;
+
+Useful links:
+
+https://www.tutorialspoint.com/wpf/wpf_layouts.htm
+
+https://prismlibrary.github.io/docs/wpf/Modules.html
+https://prismlibrary.github.io/docs/wpf/Communication.html
+https://prismlibrary.github.io/docs/wpf/legacy/Implementing-MVVM.html
+
+https://docs.microsoft.com/en-us/visualstudio/test/use-ui-automation-to-test-your-code?view=vs-2017
