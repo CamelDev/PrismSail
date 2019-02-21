@@ -20,6 +20,11 @@ namespace PrismSailCommon
             CityFound?.Invoke(city);
         }
 
+        public void PresentCityOnMap(CityData city)
+        {
+            PresentOnMap?.Invoke(city);
+        }
+
         private static List<CityProperty> GetProps()
         {
             var props = new List<CityProperty>
@@ -38,12 +43,15 @@ namespace PrismSailCommon
 
         public event Action<string> CityNotFound;
         public event Action<CityData> CityFound;
+        public event System.Action<CityData> PresentOnMap;
     }
 
     public interface ICitySearchService
     {
         void SearchByName(string name);
+        void PresentCityOnMap(CityData city);
         event System.Action<string> CityNotFound;
+        event System.Action<CityData> PresentOnMap;
         event System.Action<CityData> CityFound;
     }
 }

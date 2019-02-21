@@ -6,15 +6,18 @@ namespace PrismSail.CityDetailsModule.Views
 {
     public partial class CityDetailsView : UserControl
     {
+        private readonly ICitySearchService _citySearchService;
+
         public CityDetailsView(ICitySearchService citySearchService)
         {
+            _citySearchService = citySearchService;
             InitializeComponent();
             citySearchService.CityFound += OnCityFound;
         }
 
         private void OnCityFound(CityData city)
         {
-           var name = city.Name;
+            _citySearchService.PresentCityOnMap(city);
         }
     }
 }
