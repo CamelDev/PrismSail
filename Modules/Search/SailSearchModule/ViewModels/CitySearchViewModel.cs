@@ -7,7 +7,7 @@ namespace PrismSail.SearchModule.ViewModels
     public class CitySearchViewModel : BindableBase
     {
         private readonly ICitySearchService _citySearchService;
-        private string _searchCity = "City...";
+        private string _searchCity = "Kraków";
         public string SearchCity
         {
             get => _searchCity;

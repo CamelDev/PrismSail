@@ -37,6 +37,7 @@ namespace PrismSailCommon
                             };
 
                             CityFound?.Invoke(city);
+                            return;
                         }
                     }
 
