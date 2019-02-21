@@ -22,7 +22,6 @@
 
         <StackPanel x:Name="Menu" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Background="#FF26264D">
 
-
             <Button Height="20" Width="175" Margin="5" Content="Load map" HorizontalAlignment="Left" Click="MapButton_Click">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -37,14 +36,12 @@
                 </Button.Style>
             </Button>
 
-       
         </StackPanel>
 
         <StackPanel  Grid.Column="0" Grid.Row="2">
             <ContentControl prism:RegionManager.RegionName="CitySearchRegion" Background="#FF4E4E66" Height="95"/>
             <ScrollViewer prism:RegionManager.RegionName="CityDetailsRegion" Background="#FF4E4E66" Height="285" VerticalAlignment="Stretch" />
         </StackPanel>
-       
         
         <ContentControl prism:RegionManager.RegionName="MapRegion" Grid.Column="2" Grid.Row="2" Background="#FF4E4E99" Margin="10,10,5,5"/>
 

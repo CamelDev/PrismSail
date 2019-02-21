@@ -2,7 +2,6 @@
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Unity;
-using PrismSail.MapModule.Views;
 using PrismSail.SearchModule;
 using PrismSail.Views;
 using PrismSailCommon;
@@ -13,14 +12,15 @@ namespace PrismSail.Core
     {
         protected override DependencyObject CreateShell()
         {
-            return this.Container.Resolve<AppShell>();
+            return Container.Resolve<AppShell>();
         }
 
         protected override void InitializeShell()
         {
             base.InitializeShell();
-            App.Current.MainWindow = (Window) this.Shell;
-            App.Current.MainWindow.Show();
+            Application.Current.MainWindow = (Window) Shell;
+            if (Application.Current.MainWindow != null) 
+                Application.Current.MainWindow.Show();
         }
 
         protected override void ConfigureModuleCatalog()
