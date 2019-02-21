@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CitySearchService.cs" />
     <Compile Include="Models\CityData.cs" />
+    <Compile Include="Models\CityProperty.cs" />
     <Compile Include="Regions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimeService.cs" />

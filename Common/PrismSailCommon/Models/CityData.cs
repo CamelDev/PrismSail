@@ -7,6 +7,6 @@ namespace PrismSailCommon.Models
         public string Name { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
-        public Dictionary<string, string> Props { get; set; }
+        public List<CityProperty> Props { get; set; }
     }
 }
