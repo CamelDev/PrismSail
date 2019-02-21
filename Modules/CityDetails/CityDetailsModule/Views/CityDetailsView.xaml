@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrismSail.CityDetailsModule.Views"
+        xmlns:mvvm="http://prismlibrary.com/"
+        mvvm:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d" 
         d:DesignHeight="285" d:DesignWidth="300">
     <Grid>
@@ -13,7 +15,7 @@
                 <DataGridTextColumn/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="LblCityName" Content="No data" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold"/>
+        <Label x:Name="LblCityName" Content="{Binding CityName}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="227" FontWeight="Bold"/>
 
     </Grid>
 </UserControl>

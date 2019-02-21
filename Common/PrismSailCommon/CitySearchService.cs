@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using PrismSailCommon.Models;
 
 namespace PrismSailCommon
@@ -29,6 +27,11 @@ namespace PrismSailCommon
                 {"Population", "1.2mln"}, 
                 {"Area", "12sqr miles"},
             };
+
+            for (int i = 0; i < 1000; i++)
+            {
+                props.Add($"Prop-{i}", $"Value-{i}");
+            }
 
             return props;
         }
