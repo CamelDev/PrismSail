@@ -56,8 +56,8 @@ namespace PrismSail.MapModule.Views
             globalRect.Stroke = System.Windows.Media.Brushes.Black;
             globalRect.Fill = System.Windows.Media.Brushes.SkyBlue;
 
-            globalRect.Height = 100;
-            globalRect.Width = 100;
+            globalRect.Height = 50;
+            globalRect.Width = 50;
 
             MapCanvas.Children.Add(globalRect);
 
@@ -67,13 +67,13 @@ namespace PrismSail.MapModule.Views
 
         private void MapCanvas_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //if (e.ButtonState == MouseButtonState.Pressed)
-            //{
-            //    currentPoint = e.GetPosition(this);
+            if (e.ButtonState == MouseButtonState.Pressed)
+            {
+                currentPoint = e.GetPosition(this);
 
-            //    Canvas.SetTop(globalRect, currentPoint.Y);
-            //    Canvas.SetLeft(globalRect, currentPoint.X);
-            //}
+                Canvas.SetTop(globalRect, currentPoint.Y);
+                Canvas.SetLeft(globalRect, currentPoint.X);
+            }
         }
 
         private void MapCanvas_MouseMove(object sender, MouseEventArgs e)
@@ -84,17 +84,17 @@ namespace PrismSail.MapModule.Views
                 Canvas.SetTop(globalRect, e.GetPosition(this).Y - 50);
                 Canvas.SetLeft(globalRect, e.GetPosition(this).X - 50);
 
-                //Line line = new Line();
+                Line line = new Line();
 
-                //line.Stroke = SystemColors.WindowFrameBrush;
-                //line.X1 = currentPoint.X;
-                //line.Y1 = currentPoint.Y;
-                //line.X2 = e.GetPosition(this).X;
-                //line.Y2 = e.GetPosition(this).Y;
+                line.Stroke = SystemColors.WindowFrameBrush;
+                line.X1 = currentPoint.X;
+                line.Y1 = currentPoint.Y;
+                line.X2 = e.GetPosition(this).X;
+                line.Y2 = e.GetPosition(this).Y;
 
-                //currentPoint = e.GetPosition(this);
+                currentPoint = e.GetPosition(this);
 
-                //MapCanvas.Children.Add(line);
+                MapCanvas.Children.Add(line);
             }
         }
     }
