@@ -1,4 +1,4 @@
-PrismSail is Prism 6 na .Net 4.5 demo application;
+PrismSail is a Prism 6 .Net 4.5 targetted demo application
 
 Useful links:
 
