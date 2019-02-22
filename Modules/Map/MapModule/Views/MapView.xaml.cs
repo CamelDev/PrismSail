@@ -9,17 +9,15 @@ namespace PrismSail.MapModule.Views
 {
     public partial class MapView : UserControl
     {
-        private readonly ICitySearchService _citySearchService;
-        Point currentPoint = new Point();
-        Rectangle bgRect;
-        Rectangle globalRect;
+        Point _currentPoint;
+        Rectangle _bgRect;
+        Rectangle _globalRect;
 
         public MapView(ICitySearchService citySearchService)
-        {            
+        {
             InitializeComponent();
 
-            _citySearchService = citySearchService;
-            _citySearchService.PresentOnMap += OnPresentOnMap;
+            citySearchService.PresentOnMap += OnPresentOnMap;
 
             Overlay.Visibility = Visibility.Visible;
             WbMapBrowser.Navigate("https://www.openstreetmap.org");
@@ -28,7 +26,7 @@ namespace PrismSail.MapModule.Views
         private void OnPresentOnMap(CityData obj)
         {
             WbMapBrowser.Visibility = Visibility.Visible;
-            var mapUrl = $"www.openstreetmap.org/?lat={FormatCoord(obj.Latitude)}&lon={FormatCoord(obj.Longitude)}&zoom=17&layers=M";           
+            var mapUrl = $"www.openstreetmap.org/?lat={FormatCoord(obj.Latitude)}&lon={FormatCoord(obj.Longitude)}&zoom=14&layers=M";
             WbMapBrowser.Navigate("https://"+mapUrl);
         }
 
@@ -43,36 +41,36 @@ namespace PrismSail.MapModule.Views
             WbMapBrowser.Visibility = Visibility.Hidden;
             MapCanvas.Children.Clear();
 
-            bgRect =  new Rectangle();
-            bgRect.Stroke = System.Windows.Media.Brushes.Red;
-            bgRect.Fill = System.Windows.Media.Brushes.CadetBlue;
-            bgRect.HorizontalAlignment = HorizontalAlignment.Stretch;
-            bgRect.VerticalAlignment = VerticalAlignment.Stretch;
-            bgRect.Height = 600;
-            bgRect.Width = 700;
-            MapCanvas.Children.Add(bgRect);
+            _bgRect =  new Rectangle();
+            _bgRect.Stroke = System.Windows.Media.Brushes.Red;
+            _bgRect.Fill = System.Windows.Media.Brushes.CadetBlue;
+            _bgRect.HorizontalAlignment = HorizontalAlignment.Stretch;
+            _bgRect.VerticalAlignment = VerticalAlignment.Stretch;
+            _bgRect.Height = 600;
+            _bgRect.Width = 700;
+            MapCanvas.Children.Add(_bgRect);
 
-            globalRect = new Rectangle();
-            globalRect.Stroke = System.Windows.Media.Brushes.Black;
-            globalRect.Fill = System.Windows.Media.Brushes.SkyBlue;
+            _globalRect = new Rectangle();
+            _globalRect.Stroke = System.Windows.Media.Brushes.Black;
+            _globalRect.Fill = System.Windows.Media.Brushes.SkyBlue;
 
-            globalRect.Height = 50;
-            globalRect.Width = 50;
+            _globalRect.Height = 50;
+            _globalRect.Width = 50;
 
-            MapCanvas.Children.Add(globalRect);
+            MapCanvas.Children.Add(_globalRect);
 
-            Canvas.SetTop(globalRect, 200);
-            Canvas.SetLeft(globalRect, 200);
+            Canvas.SetTop(_globalRect, 200);
+            Canvas.SetLeft(_globalRect, 200);
         }
 
         private void MapCanvas_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ButtonState == MouseButtonState.Pressed)
             {
-                currentPoint = e.GetPosition(this);
+                _currentPoint = e.GetPosition(this);
 
-                Canvas.SetTop(globalRect, currentPoint.Y);
-                Canvas.SetLeft(globalRect, currentPoint.X);
+                Canvas.SetTop(_globalRect, _currentPoint.Y);
+                Canvas.SetLeft(_globalRect, _currentPoint.X);
             }
         }
 
@@ -81,18 +79,18 @@ namespace PrismSail.MapModule.Views
             if (e.LeftButton == MouseButtonState.Pressed)
             {
 
-                Canvas.SetTop(globalRect, e.GetPosition(this).Y - 50);
-                Canvas.SetLeft(globalRect, e.GetPosition(this).X - 50);
+                Canvas.SetTop(_globalRect, e.GetPosition(this).Y - 50);
+                Canvas.SetLeft(_globalRect, e.GetPosition(this).X - 50);
 
                 Line line = new Line();
 
                 line.Stroke = SystemColors.WindowFrameBrush;
-                line.X1 = currentPoint.X;
-                line.Y1 = currentPoint.Y;
+                line.X1 = _currentPoint.X;
+                line.Y1 = _currentPoint.Y;
                 line.X2 = e.GetPosition(this).X;
                 line.Y2 = e.GetPosition(this).Y;
 
-                currentPoint = e.GetPosition(this);
+                _currentPoint = e.GetPosition(this);
 
                 MapCanvas.Children.Add(line);
             }

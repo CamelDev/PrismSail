@@ -28,7 +28,7 @@ namespace PrismSail.SearchModule.ViewModels
         private bool _isEnabled = true;
         public bool IsEnabled
         {
-            get { return _isEnabled; }
+            get => _isEnabled;
             set
             {
                 SetProperty(ref _isEnabled, value);

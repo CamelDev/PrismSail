@@ -43,8 +43,14 @@ namespace PrismSail.Core
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
-            Container.RegisterInstance<ITimeService>(new TimeService());
-            Container.RegisterInstance<ICitySearchService>(new CitySearchService());
+
+            RegisterIocSingletons();
+        }
+
+        private void RegisterIocSingletons()
+        {
+            Container.RegisterInstance<ITimeService>(new TimeService(), new ContainerControlledLifetimeManager());
+            Container.RegisterInstance<ICitySearchService>(new CitySearchService(), new ContainerControlledLifetimeManager());
         }
     }
 }
