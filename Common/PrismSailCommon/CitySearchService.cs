@@ -7,7 +7,7 @@ namespace PrismSailCommon
 {
     public class CitySearchService : ICitySearchService
     {
-        public async Task SearchByName(string name)
+        public async Task SearchByNameAsync(string name)
         {
             CitySearchBegin?.Invoke($"Searching for: {name}");
             try
@@ -38,7 +38,7 @@ namespace PrismSailCommon
 
     public interface ICitySearchService
     {
-        Task SearchByName(string name);
+        Task SearchByNameAsync(string name);
         void PresentCityOnMap(CityData city);
         event Action<string> CitySearchBegin;
         event Action<string> CityNotFound;
