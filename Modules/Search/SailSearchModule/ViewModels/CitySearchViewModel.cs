@@ -46,6 +46,7 @@ namespace PrismSail.SearchModule.ViewModels
         private void SearchCityByName()
         {
             SearchCityLabel = SearchCity;
+            // awaitable?
             _citySearchService.SearchByName(SearchCity);
         }
 
