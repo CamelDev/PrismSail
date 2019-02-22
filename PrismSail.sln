@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityDetailsModule", "Module
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapModule", "Modules\Map\MapModule\MapModule.csproj", "{DE6A59F3-0351-427C-8AA4-0F3A551A070B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0A1F9139-4BFD-4090-A301-BA66591D55CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "Tests\UserInterface\UserInterface.csproj", "{0537C0DF-868F-4BA6-8BDE-BCCA5940397A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{DE6A59F3-0351-427C-8AA4-0F3A551A070B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE6A59F3-0351-427C-8AA4-0F3A551A070B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE6A59F3-0351-427C-8AA4-0F3A551A070B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0537C0DF-868F-4BA6-8BDE-BCCA5940397A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0537C0DF-868F-4BA6-8BDE-BCCA5940397A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0537C0DF-868F-4BA6-8BDE-BCCA5940397A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0537C0DF-868F-4BA6-8BDE-BCCA5940397A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +60,7 @@ Global
 		{0636FC9B-2D92-4E2D-9893-D4A5D50075A0} = {BE58750A-67A2-49CE-AAA2-04CDC67868B3}
 		{0E8BAE2F-85AC-4037-BC72-D165DE6702BB} = {DB3B60E9-CFA1-4C9F-99FA-0DE90A5C2971}
 		{DE6A59F3-0351-427C-8AA4-0F3A551A070B} = {DB3B60E9-CFA1-4C9F-99FA-0DE90A5C2971}
+		{0537C0DF-868F-4BA6-8BDE-BCCA5940397A} = {0A1F9139-4BFD-4090-A301-BA66591D55CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD24D934-5FDB-4275-B264-C51EA0C9333F}

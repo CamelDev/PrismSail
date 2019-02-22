@@ -18,7 +18,7 @@
                     Name="MapCanvas" 
                     Margin="10,10,10,10"
                     MouseDown="MapCanvas_MouseDown"
-                    MouseMove="MapCanvas_MouseMove" 
+                    MouseMove="MapCanvas_MouseMove" AutomationProperties.AutomationId="Canvas" 
                     >
                 <!--<Rectangle Margin="10,45,5,10"
                            Canvas.Top="5" 
@@ -28,7 +28,7 @@
                             Fill="blue" Opacity="0.2" />-->
             </Canvas>
         </Grid>
-        <Button Content="Draw me!"  Width="74" Height="20" Click="DrawMe_Click" Margin="20,10,334,372" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <Button Content="Draw me!"  Width="74" Height="20" Click="DrawMe_Click" Margin="20,10,334,372" VerticalAlignment="Top" HorizontalAlignment="Left" AutomationProperties.AutomationId="Draw" />
 
         <ContentControl x:Name="MainContent"  Grid.ZIndex="10" Margin="0,40,8,10">
 
