@@ -11,3 +11,6 @@ https://prismlibrary.github.io/docs/wpf/legacy/Implementing-MVVM.html
 https://docs.microsoft.com/en-us/visualstudio/test/use-ui-automation-to-test-your-code?view=vs-2017
 
 https://www.tutorialsteacher.com/ioc/lifetime-manager-in-unity-container
+
+
+Copyright ChartCo 2019
