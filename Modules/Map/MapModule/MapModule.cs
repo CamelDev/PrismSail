@@ -19,5 +19,7 @@ namespace PrismSail.MapModule
             _regionManager.RegisterViewWithRegion(Regions.MapRegion, typeof(MapView));
         }
 
+
+        // another change
     }
 }
