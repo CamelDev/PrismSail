@@ -10,6 +10,8 @@ namespace PrismSail.Core
 {
     class BootStrapper : UnityBootstrapper
     {
+        // first change
+
         protected override DependencyObject CreateShell()
         {
             return Container.Resolve<AppShell>();
